@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>사과게임 (Apple Game)</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <header id="header">
+            <div class="stat-box">
+                <span class="label">TIME</span>
+                <span id="timer">02:00</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">SCORE</span>
+                <span id="score">0</span>
+            </div>
+        </header>
+
+        <main id="board-container">
+            <div id="grid-board"></div>
+            <div id="selection-box"></div>
+        </main>
+    </div>
+
+    <!-- Start Overlay -->
+    <div id="start-overlay" class="overlay active">
+        <div class="overlay-content">
+            <h1>🍎</h1>
+            <h2>사과게임</h2>
+            <p>드래그하여 합이 <strong>10</strong>이 되는<br>사과들을 제거하세요!</p>
+            <p class="limit-text">2분 제한</p>
+            <button id="start-btn" class="glow-button">게임 시작</button>
+        </div>
+    </div>
+
+    <!-- Game Over Overlay -->
+    <div id="gameover-overlay" class="overlay">
+        <div class="overlay-content">
+            <h1>🎉</h1>
+            <h2>시간 종료!</h2>
+            <p>최종 점수: <strong id="final-score">0</strong></p>
+            <div id="ranking-container">
+                <h3>🏆 Top 5 랭킹 🏆</h3>
+                <ul id="ranking-list"></ul>
+            </div>
+            <button id="restart-btn" class="glow-button">다시 하기</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
