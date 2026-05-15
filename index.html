@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자운고등학교 월간 급식 달력</title>
+    <meta name="description" content="자운고등학교의 월간 급식 메뉴를 달력 형태로 확인하세요.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <main class="dashboard">
+        <!-- 왼쪽 패널: 캘린더 -->
+        <section class="glass-panel calendar-panel">
+            <header class="calendar-header">
+                <button id="prev-month" class="nav-btn">&lt;</button>
+                <h2 id="month-display">2026년 5월</h2>
+                <button id="next-month" class="nav-btn">&gt;</button>
+            </header>
+            
+            <div class="calendar-grid">
+                <!-- 요일 헤더 -->
+                <div class="day-name sun">일</div>
+                <div class="day-name">월</div>
+                <div class="day-name">화</div>
+                <div class="day-name">수</div>
+                <div class="day-name">목</div>
+                <div class="day-name">금</div>
+                <div class="day-name sat">토</div>
+                
+                <!-- 날짜 그리드 (JS로 동적 생성) -->
+                <div id="calendar-days" class="days-grid"></div>
+            </div>
+            
+            <div id="calendar-loading" class="spinner hidden">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </section>
+
+        <!-- 오른쪽 패널: 급식 상세 정보 -->
+        <section class="glass-panel detail-panel">
+            <header>
+                <div class="badge">자운고등학교</div>
+                <h1>오늘의 급식 🍱</h1>
+                <p id="date-display" class="date-text">날짜를 선택해주세요</p>
+            </header>
+            
+            <div id="error-message" class="error-msg hidden"></div>
+
+            <div id="meal-content" class="fade-in">
+                <div class="empty-state" id="empty-state">
+                    <span class="icon">🍽️</span>
+                    <p>선택하신 날짜의 급식 정보가 없습니다.</p>
+                </div>
+                
+                <div id="meal-data" class="hidden">
+                    <ul id="menu-list" class="menu-list">
+                        <!-- 메뉴 항목 동적 추가 -->
+                    </ul>
+                    <div class="nutrition-info">
+                        <span class="icon">⚡</span>
+                        <span id="calories-display">0 Kcal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
